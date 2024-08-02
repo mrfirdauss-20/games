@@ -9,40 +9,87 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333;
         }
         .button-container {
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         .button {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            margin: 0 20px;
+            margin: 10px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s;
         }
-        .red { background-color: red; }
-        .yellow { background-color: yellow; }
-        .green { background-color: green; }
-        .score, .trials {
+        .button:active {
+            transform: scale(0.95);
+        }
+        .red { background-color: #e74c3c; }
+        .yellow { background-color: #f1c40f; }
+        .green { background-color: #2ecc71; }
+        .score, .trials, .result, .info {
             margin-top: 20px;
-            font-size: 2em;
-            color: red;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .info {
+            text-align: center;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .play-again-container {
+            margin-top: 20px;
+        }
+        .play-again-container button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .play-again-container button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
     <h1>Game Peluang</h1>
     <div class="button-container">
-        <div class="button red" onclick="guess('red')"></div>
-        <div class="button yellow" onclick="guess('yellow')"></div>
-        <div class="button green" onclick="guess('green')"></div>
+        <div class="button red" onclick="guess('red')">Red</div>
+        <div class="button yellow" onclick="guess('yellow')">Yellow</div>
+        <div class="button green" onclick="guess('green')">Green</div>
     </div>
     <div class="score" id="score">0%</div>
-    <div class="trials" id="trials">Trials: 0</div>
+    <div class="trials" id="trials">Percobaan tersisa: 300</div>
+    <div class="result" id="result"></div>
+    <div class="info">
+        <p>Rekor tertinggi = 53.42%</p>
+        <p>Nilai rata-rata = 48.23%</p>
+    </div>
 
     <script src="game.js"></script>
 </body>
