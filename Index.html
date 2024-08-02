@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Peluang</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .red { background-color: red; }
+        .yellow { background-color: yellow; }
+        .green { background-color: green; }
+        .score, .trials {
+            margin-top: 20px;
+            font-size: 2em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Peluang</h1>
+    <div class="button-container">
+        <div class="button red" onclick="guess('red')"></div>
+        <div class="button yellow" onclick="guess('yellow')"></div>
+        <div class="button green" onclick="guess('green')"></div>
+    </div>
+    <div class="score" id="score">0%</div>
+    <div class="trials" id="trials">Trials: 0</div>
+
+    <script src="game.js"></script>
+</body>
+</html>
